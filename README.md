@@ -9,39 +9,37 @@
 #### Production:
 * The recommended method for 3D printing these keycaps is stereolithography (SLA), selective laser sintering is also a valid method but results in more grainy texture and less consistent dimensions. Filament deposition printing (FDM) can also be used but keycap stem fitment may be compromised, more discussion on this in the design notes section
 
-* There are two sets of individual models and layouts intended for specific printing methpds 
-    * The models in `./keycaps/SLA` have 1.20 mm sized stem slot widths for resin SLA printing
-    * The models in `./keycaps/SLS` have 1.17 mm sized stem slot widths for Selective Laser Sintering (SLS)/
-    * Future work: Models and layouts sized for Filament Deposition Printing
+* Currently supported printing methods:
+    * Selective Laser Sintering (SLS): **Supported**
+        * Individual keycap models in `./keycaps/sls/stl`
+        * Layouts in `./layouts/sls/stl`
 
+    * Stereolithography (SLA): **Supported**
+        * Individual keycap models in `./keycaps/sla/stl`
 
-* The keycaps can be printed individually, or as a 'layout' (a grid of keycaps), for either SLA or SLS printing:
+    * Filament Deposition Printing (FDM): **Not yet supported**
 
-    * Individual keycap models in STL format for 3D printing are in `./keycaps/stl`. Layouts in STL format are in `./layouts/stl`
+* **SLA**: The keycaps can be printed individually, or by arranging selected keycap models in slicing software, such as [Prusa Slicer](https://www.prusa3d.com/prusaslicer/)
+    * The layout of keycaps for SLA will vary depending on the printer being used, as consumer-tier printers are limited in the quantity of keycaps being printed at once due to build plate area as well as model cross-sectional area being printed at one time
+        * I recommend downloading individual keycap models and arranging them to suit the SLA printer being used
+    * Example SLA-layout created using Prusa Slicer for printing with an Anycubic Photon:
+    ![prusa_slicer_layout](https://i.imgur.com/WXdAUii.jpg)
 
-    * I had the prototypes made by [3D Hubs](https://www.3dhubs.com/) by uploading the `./layouts/SLS/sldprt/TAS_profile_layout_4x6.sldprt` and having two copies of this layout made to fill a 4x6 split keyboard
-        * I chose the standard black nylon powder as the material
-
-    * A layout of keycaps can be made in Solidworks using the `mx_stem_grid_6x6.sldprt` file and mating individual keycaps to the MX stems in an assembly file, some examples of this are in `./layouts/sldasm`
-        * **Note**: the MX stem grid should be supressed before either converting the assembly to a STL/OBJ/SLDPRT, otherwise the stem grid will be printed along with the keycaps
-        * This is also useful when visualizing the layout before production
+* **SLS**: The keycaps can be sent to a 3D printing service such as (3D Hubs)[https://www.3dhubs.com/] and made with SLS Nylon
 
 ----
 
 #### Supported layouts:
 ##### Planck:
 ![planck_layout_render](https://i.imgur.com/ljV0FAw.jpg)
-
 * Can be made by printing the `./layouts/stl/TAS_profile_layout_4x6_a.stl` and `./layouts/stl/TAS_profile_layout_4x6_b.stl` layout files
 
 ##### Preonic:
 ![preonic_layout_render](https://i.imgur.com/6NSYef8.jpg)
-
 * Can be made by printing the `./layouts/stl/TAS_profile_layout_5x6_a.stl` and `./layouts/stl/TAS_profile_layout_5x6_b.stl` layout files
 
 ##### Corne
 ![corne_layout_render](https://i.imgur.com/aOKTsyF.jpg)
-
 * Can be produced by printing out two copies of the `./layouts/stl/TAS_profile_layout_4x6_c.stl` file
 
 ----
@@ -68,19 +66,11 @@
 ![4x6_set](https://i.imgur.com/R5IEBWT.jpg)
 
 * The models' stem slots are sized differently for SLA and SLS printing:
-    * Initially, I sized the stem slot width to 1.20 mm
-    * The prototypes I had SLS 3D printed from nylon had a moderately snug fit for most of the keycaps, however, due to manufacturing inconsistencies, some keycaps were loose on the stem
-    * I have reduced the stem slot width from 1.20 mm to 1.17 mm to ensure a good fit when printed with SLS
-    * 1.17 mm is too narrow for SLA printing however, so the `./keycaps/SLA` models have 1.20 mm stem slots
-        * **Note**: This sizing may be too tight for FDM 3D printing, I have read that some users size the stem slot width ranging from 1.25mm to 1.35mm
-        * However, I have also read that it is possible to soak the inside of the stem slot with acetone and 'mold' the keycap's slot to a Cherry MX stem
-        * Will working on models with stems sized for FDM printing in the future
+    * SLS models have narrower stem slots: 1.17 mm, which should result in a snug fit
+    * SLA models have more detailed stem slots and are larger: 1.325/1.425mm
+        * Tested on Kailh Box and Pro Heavy stems
 
 ![mx_stem_dimensions](https://i.imgur.com/NWxlgH6.jpg)
-
-* Each keycap uses the same Solidworks part for the Cherry-MX compatible stem: `mx_stem.sldprt`
-    * One of the boss extrude lengths is set to the height of the MX switch stem
-    * The other boss extrude length needs to be altered to meet the top surface of the keycap, as the keycaps have differing heights (plane center height)
 
 * The geometry of the keycap is defined using the following parameters:
     1) Base square side length
