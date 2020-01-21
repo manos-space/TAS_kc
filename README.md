@@ -25,7 +25,7 @@
     * Example SLA-layout created using Prusa Slicer for printing with an Anycubic Photon:
     ![prusa_slicer_layout](https://i.imgur.com/WXdAUii.jpg)
 
-* **SLS**: The keycaps can be sent to a 3D printing service such as [3D Hub](https://www.3dhubs.com/) and made with SLS Nylon
+* **SLS**: The keycaps can be sent to a 3D printing service such as [3D Hubs](https://www.3dhubs.com/) and made with SLS Nylon
 
 ----
 
