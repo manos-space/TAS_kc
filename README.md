@@ -16,16 +16,34 @@
 
     * Stereolithography (SLA): **Supported**
         * Individual keycap models in `./keycaps/sla/stl`
+        * Layouts for an Anycubic Photon SLA printer in `./layouts/sla/photon_layouts`
 
     * Filament Deposition Printing (FDM): **Not yet supported**
 
-* **SLA**: The keycaps can be printed individually, or by arranging selected keycap models in slicing software, such as [Prusa Slicer](https://www.prusa3d.com/prusaslicer/)
+----
+
+##### SLA Printing:
+* The keycaps can be printed individually, or by arranging selected keycap models in slicing software, such as [Prusa Slicer](https://www.prusa3d.com/prusaslicer/)
     * The layout of keycaps for SLA will vary depending on the printer being used, as consumer-tier printers are limited in the quantity of keycaps being printed at once due to build plate area as well as model cross-sectional area being printed at one time
         * I recommend downloading individual keycap models and arranging them to suit the SLA printer being used
-    * Example SLA-layout created using Prusa Slicer for printing with an Anycubic Photon:
-    ![prusa_slicer_layout](https://i.imgur.com/WXdAUii.jpg)
+* If using a printer similar to the Anycubic Photon, I suggest creating a checker board pattern to minimize the chance of failed prints
+    * The STL files in the `./layouts/SLA/photon_layouts` are what I use to print sets of these keycaps:
+    ![prusa_slicer_layout](https://i.imgur.com/GTG7fCL.jpg)
 
-* **SLS**: The keycaps can be sent to a 3D printing service such as [3D Hubs](https://www.3dhubs.com/) and made with SLS Nylon
+* Print Settings
+
+    * If using Elegoo Black Resin, the following settings result in successful prints:
+        - 0.03 mm layer height
+        - 8 bottom layers
+        - 90 second bottom exposure time
+        - 15 second normal exposure time
+        - 1.5 second off time
+        - 65F / 18.33C ambient temperature
+
+----
+
+##### SLS Printing: 
+* Keycap layouts can be sent to a 3D printing service such as [3D Hubs](https://www.3dhubs.com/) and made with SLS Nylon
 
 ----
 
